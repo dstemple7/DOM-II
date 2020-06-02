@@ -4,6 +4,7 @@ const greenBlock = document.querySelector('.block--green')
 const pinkBlock = document.querySelector('.block--pink')
 const grayBlock = document.querySelector('.block--gray')
 let rocketship
+let marginStart = 1
 
 function redOne(event){
     redBlock.style.order = -1
@@ -50,23 +51,13 @@ function greyOne(event){
 }
 grayBlock.addEventListener('click', greyOne)
 
-redBlock.addEventListener('mousedown', redRocketLiftoff)
-
 function redRocketLiftoff(event){
     rocketship = true
-
-    let marginStart = 10
-
     moveMore()
-
     function moveMore(){
-        i = setTimeout(moving, 10)
-    }
-
+        i = setTimeout(moving, 1)}
     function moveLess(){
-        i = setTimeout(returning, 10)
-    }
-
+        i = setTimeout(returning, 1)}
     function moving(){
         if (rocketship){
             marginStart++           
@@ -74,17 +65,128 @@ function redRocketLiftoff(event){
             moveMore()
         } else {
             returning()
-        }
-    }
+        }}
     function returning(){
         if (marginStart > 10){
         marginStart--
         event.target.style.marginLeft = `${marginStart}px`
         moveLess()
-        }
-    }
-}
+        }}}
+
+redBlock.addEventListener('mousedown', redRocketLiftoff)
 
 redBlock.addEventListener('mouseup', (event) => {
+    rocketship = false
+})
+
+function blueRocketLiftoff(event){
+    rocketship = true
+    moveMore()
+    function moveMore(){
+        i = setTimeout(moving, 1)}
+    function moveLess(){
+        i = setTimeout(returning, 1)}
+    function moving(){
+        if (rocketship){
+            marginStart++           
+            event.target.style.marginLeft = `${marginStart}px`
+            moveMore()
+        } else {
+            returning()
+        }}
+    function returning(){
+        if (marginStart > 10){
+        marginStart--
+        event.target.style.marginLeft = `${marginStart}px`
+        moveLess()
+        }}}
+
+blueBlock.addEventListener('mousedown', blueRocketLiftoff)
+
+blueBlock.addEventListener('mouseup', (event) => {
+    rocketship = false
+})
+
+function greenRocketLiftoff(event){
+    rocketship = true
+    moveMore()
+    function moveMore(){
+        i = setTimeout(moving, 1)}
+    function moveLess(){
+        i = setTimeout(returning, 1)}
+    function moving(){
+        if (rocketship){
+            marginStart++           
+            event.target.style.marginLeft = `${marginStart}px`
+            moveMore()
+        } else {
+            returning()
+        }}
+    function returning(){
+        if (marginStart > 10){
+        marginStart--
+        event.target.style.marginLeft = `${marginStart}px`
+        moveLess()
+        }}}
+
+greenBlock.addEventListener('mousedown', greenRocketLiftoff)
+
+greenBlock.addEventListener('mouseup', (event) => {
+    rocketship = false
+})
+
+function pinkRocketLiftoff(event){
+    rocketship = true
+    moveMore()
+    function moveMore(){
+        i = setTimeout(moving, 1)}
+    function moveLess(){
+        i = setTimeout(returning, 1)}
+    function moving(){
+        if (rocketship){
+            marginStart++           
+            event.target.style.marginLeft = `${marginStart}px`
+            moveMore()
+        } else {
+            returning()
+        }}
+    function returning(){
+        if (marginStart > 10){
+        marginStart--
+        event.target.style.marginLeft = `${marginStart}px`
+        moveLess()
+        }}}
+
+pinkBlock.addEventListener('mousedown', pinkRocketLiftoff)
+
+pinkBlock.addEventListener('mouseup', (event) => {
+    rocketship = false
+})
+
+function grayRocketLiftoff(event){
+    rocketship = true
+    moveMore()
+    function moveMore(){
+        i = setTimeout(moving, 1)}
+    function moveLess(){
+        i = setTimeout(returning, 1)}
+    function moving(){
+        if (rocketship){
+            marginStart++           
+            event.target.style.marginLeft = `${marginStart}px`
+            moveMore()
+        } else {
+            returning()
+        }}
+    function returning(){
+        if (marginStart > 10){
+        marginStart--
+        event.target.style.marginLeft = `${marginStart}px`
+        moveLess()
+        }}}
+
+grayBlock.addEventListener('mousedown', grayRocketLiftoff)
+
+grayBlock.addEventListener('mouseup', (event) => {
     rocketship = false
 })
