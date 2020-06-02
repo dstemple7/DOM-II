@@ -7,6 +7,9 @@ const adventurePic = document.querySelector('#adventurePic')
 const modal = document.querySelector('.modal')
 const confirmButton = document.querySelector('#confirmButton')
 const cancelButton = document.querySelector('#cancelButton')
+const location2 = 'https://state.gov'
+const lightSwitch = document.querySelector('#lightsOut')
+const bodyP = document.querySelector('#bodyAll')
 
 function keepScrollin(event){
     pageTitle.textContent = "Keep Scrollin, Scrollin, Scrollin"
@@ -60,14 +63,20 @@ function noEscape(event){
 cancelButton.addEventListener('click', noEscape)
 
 function yesEscape(event){
-    window.open(location.href(www.google.com), '_blank')
+    window.open(location2, '_blank')
 }
 confirmButton.addEventListener('click', yesEscape)
 
-  function openModal() {
+function lightsOut(event){
+    bodyP.style.backgroundColor = 'black'
+    bodyP.style.color = 'white'
+}
+lightSwitch.addEventListener('click', lightsOut)
+
+function openModal() {
     modal.classList.remove('off')
   }
 
-  function closeModal() {
+function closeModal() {
     modal.classList.add('off')
   }
