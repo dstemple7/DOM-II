@@ -9,7 +9,9 @@ const confirmButton = document.querySelector('#confirmButton')
 const cancelButton = document.querySelector('#cancelButton')
 const location2 = 'https://state.gov'
 const lightSwitch = document.querySelector('#lightsOut')
+const lightSwitch2 = document.querySelector('#lightsOn')
 const bodyP = document.querySelector('#bodyAll')
+const destinationPic = document.querySelector('#destinationPic')
 
 function keepScrollin(event){
     pageTitle.textContent = "Keep Scrollin, Scrollin, Scrollin"
@@ -31,6 +33,14 @@ function funPicSwitch(event){
     adventurePic.setAttribute('src',"img/fun.jpg")
 }
 funPic.addEventListener('click', funPicSwitch)
+
+function destiPicDisappear(event){
+    destinationPic.style.display = 'none'
+    setTimeout(() => {
+        destinationPic.style.display = 'block'
+    }, 2000)
+}
+destinationPic.addEventListener('click', destiPicDisappear)
 
 function adventurePicSwitch(event){
     funPic.setAttribute('src',"img/adventure.jpg")
@@ -70,8 +80,20 @@ confirmButton.addEventListener('click', yesEscape)
 function lightsOut(event){
     bodyP.style.backgroundColor = 'black'
     bodyP.style.color = 'white'
+    lightSwitch2.classList.remove('off')
+    lightSwitch.classList.add('off')
+    logoP.style.color = 'red'
 }
 lightSwitch.addEventListener('click', lightsOut)
+
+function lightsOn(event){
+    bodyP.style.backgroundColor = ''
+    bodyP.style.color = ''
+    lightSwitch.classList.remove('off')
+    lightSwitch2.classList.add('off')
+    logoP.style.color = ''
+}
+lightSwitch2.addEventListener('click', lightsOn)
 
 function openModal() {
     modal.classList.remove('off')
@@ -80,3 +102,7 @@ function openModal() {
 function closeModal() {
     modal.classList.add('off')
   }
+
+  document.querySelector('.nav').addEventListener('click', function(event){
+      event.preventDefault()
+  })
