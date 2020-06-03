@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Fun Bus Travel Agency - Solution</title>
+  <title id="titleP">Fun Bus Travel Agency - Solution</title>
 
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Roboto" rel="stylesheet">
   <link href="css/index.css" rel="stylesheet">
@@ -16,10 +16,11 @@
   <![endif]-->
 </head>
 
-<body>
-
+<body id="bodyAll">
   <header class="main-navigation">
     <div class="container nav-container">
+      <button id="lightsOut">Lights Off</button>
+      <button class="off" id="lightsOn">Lights On</button>
       <h1 class="logo-heading">Fun Bus</h1>
       <nav class="nav">
         <a class="nav-link" href="#">Home</a>
@@ -43,12 +44,12 @@
         <p>Expedition colorful design simple excursion blogger blogger design WordPress design, design organized website theme.</p>
       </div>
       <div class="img-content">
-        <img src="img/adventure.jpg" alt="Let's go on an adventure!">
+        <img id="adventurePic" src="img/adventure.jpg" alt="Let's go on an adventure!">
       </div>
     </section>
     <section class="content-section inverse-content">
       <div class="img-content">
-          <img src="img/fun.jpg" class="img-fluid rounded" alt="Lets have fun!">
+          <img id="funPic" src="img/fun.jpg" class="img-fluid rounded" alt="Lets have fun!">
       </div>
       <div class="text-content">
         <h2>Adventure Awaits</h2>
@@ -60,7 +61,7 @@
     <section class="content-destination">
       <h2>Pick Your Destination</h2>
       <p>Expedition excursion design darn excursion fun, clean simple organized WordPress Travel colorful webdesign. Traveler blogger website design expedition clean excursion traveling.</p>
-      <img src="img/destination.jpg" alt="Second slide">
+      <img id="destinationPic" src="img/destination.jpg" alt="Second slide">
     </section>
     <section class="content-pick">
 
@@ -85,6 +86,15 @@
   <footer class="footer">
     <p>Copyright Fun Bus 2018</p>
   </footer>
+
+  <div class="modal off">
+    <div class="modal-opacity"></div>
+    <div class="modal-dialog">
+      <h4>Do you want to ESCAPE???</h4>
+      <button id="confirmButton">Yes</button>
+      <button id="cancelButton">No</button>
+    </div>
+  </div>
 
 </body>
 </html>
